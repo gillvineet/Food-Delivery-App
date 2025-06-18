@@ -16,9 +16,6 @@ jobs:
     name: Build and Deploy Job
     steps:
       - uses: actions/checkout@v3
-        with:
-          submodules: true
-          lfs: false
 
       - name: Setup Node.js
         uses: actions/setup-node@v3
@@ -28,7 +25,11 @@ jobs:
       - name: Install dependencies
         run: npm install --legacy-peer-deps
 
-      # Azure will now handle the build by running `npm run build` automatically
+      - name: Build the app
+        run: npm run build
+
+      - name: Rename hello.html to index.html
+        run: mv build/hello.html build/index.html
 
       - name: Deploy to Azure Static Web Apps
         uses: Azure/static-web-apps-deploy@v1
@@ -36,9 +37,8 @@ jobs:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_BRAVE_OCEAN_01F587910 }}
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           action: "upload"
-          app_location: "."             # where hello.html, package.json are
-          output_location: "build"      # where parcel outputs the files
-          skip_app_build: false         # let Azure handle the build step
+          app_location: "build"
+          skip_app_build: true         # ✅ Tells Azure: we've built it already, don’t use Oryx
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
