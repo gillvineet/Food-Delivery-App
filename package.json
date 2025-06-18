@@ -1,0 +1,35 @@
+{
+  "name": "namstey-react",
+  "version": "1.0.0",
+  "description": "this is namstey react",
+  "scripts": {
+    "start": "parcel hello.html",
+    "build": "parcel build hello.html",
+    "test": "jest"
+  },
+  "keywords": [
+    "namstey",
+    "react"
+  ],
+  "author": "gill",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.10.2",
+    "postcss": "^8.4.32",
+    "process": "^0.11.10",
+    "tailwindcss": "^3.3.6"
+  },
+  "dependencies": {
+    "@payhere-js-sdk/client": "^1.0.4",
+    "@paypal/react-paypal-js": "^8.8.3",
+    "@reduxjs/toolkit": "^2.0.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-redux": "^9.0.4",
+    "react-router-dom": "^6.20.1",
+    "redux-persist": "^6.0.0"
+  },
+  "browserslist": [
+    "last 2 versions"
+  ]
+}
