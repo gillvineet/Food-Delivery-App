@@ -5,7 +5,7 @@
   "scripts": {
     "start": "parcel hello.html",
     "build": "parcel build hello.html --dist-dir build",
-    "test": "jest"
+    "test": "echo \"no tests yet\""
   },
   "keywords": [
     "namstey",
