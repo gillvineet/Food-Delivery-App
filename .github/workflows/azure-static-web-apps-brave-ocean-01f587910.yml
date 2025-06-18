@@ -28,14 +28,6 @@ jobs:
       - name: Build the app using Parcel
         run: npm run build
 
-      - name: Rename output to index.html if needed
-        run: |
-          if [ -f dist/index.html ]; then
-            echo "Build output looks correct"
-          elif [ -f dist/hello.html ]; then
-            mv dist/hello.html dist/index.html
-          fi
-
       - name: Deploy to Azure Static Web Apps
         uses: Azure/static-web-apps-deploy@v1
         with:
