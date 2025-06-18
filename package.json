@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "this is namstey react",
   "scripts": {
-    "start": "parcel hello.html",
-    "build": "parcel build hello.html --dist-dir build",
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
     "test": "echo \"no tests yet\""
   },
   "keywords": [
