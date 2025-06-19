@@ -1,9 +1,0 @@
-**/*.map
-node_modules/
-tests/
-README.md
-.vscode/
-.github/
-docs/
-coverage/
-src/assets/videos/
