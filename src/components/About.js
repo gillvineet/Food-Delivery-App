@@ -6,4 +6,4 @@ const About=()=>{
         </div>
     );
 };
-export default a=About; 
+export default About; 
